@@ -1,0 +1,3 @@
+[submodule "OpenRecipeBook"]
+	path = OpenRecipeBook
+	url = https://github.com/joshua-stone/OpenRecipeBook
