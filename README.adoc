@@ -11,6 +11,7 @@ $ sudo apt install --assume-yes make pandoc python3-pip ruby
 $ sudo gem install bundler
 $ pip3 install --user -r requirements.txt
 $ bundle install
+$ git submodule update --init --recursive
 $ make
 $ xdg-open builds/recipe-book.pdf
 ....
@@ -23,6 +24,7 @@ $ toolbox run --container openrecipebook sudo dnf --assumeyes install make pando
 $ toolbox run --container openrecipebook sudo gem install bundler
 $ toolbox run --container openrecipebook pip3 install --user -r requirements.txt
 $ toolbox run --container openrecipebook bundle install
+$ toolbox run --container openrecipebook git submodule update --init --recursive
 $ toolbox run --container openrecipebook make
 $ xdg-open builds/recipe-book.pdf
 ....
@@ -34,6 +36,7 @@ $ sudo zypper --non-interactive install make pandoc python3-pip ruby
 $ sudo gem install bundler
 $ pip3 install --user -r requirements.txt
 $ bundle install
+$ git submodule update --init --recursive
 $ make
 $ xdg-open builds/recipes-book.pdf
 ....

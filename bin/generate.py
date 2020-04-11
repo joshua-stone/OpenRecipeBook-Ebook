@@ -21,8 +21,8 @@ from asciidocpresenters.chapter import ChapterAsciidocPresenter
 def main():
     parser = ArgumentParser(description='Tool for generating recipe books')
     parser.add_argument('-b', '--builddir', type=str, default='builds', help='Destination for built documents')
-    parser.add_argument('-c', '--configfile', type=str, default='data/book.yml', help='Input file describing various editions, e.g., \'data/book.yml\'')
-    parser.add_argument('-d', '--datadir', type=str, default='data')
+    parser.add_argument('-c', '--configfile', type=str, default='book/book.yml', help='Input file describing various editions, e.g., \'book/book.yml\'')
+    parser.add_argument('-d', '--datadir', type=str, default='book')
     parser.add_argument('-t', '--temperature', help='Set temperature', choices=['imperial', 'si'], default='imperial')
 
     args = parser.parse_args()

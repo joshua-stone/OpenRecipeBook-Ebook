@@ -1,4 +1,4 @@
-CONFIG=data/book.yml
+CONFIG=book/book.yml
 DESTINATION=builds
 FLAGS=--safe-mode=secure --attribute=allow-uri-read
 INPUT=builds/asciidoc/*.adoc
