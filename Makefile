@@ -6,6 +6,7 @@ OUTPUT=$(DESTINATION)/recipe-book
 TEMPERATURE_SYSTEM=imperial
 ASCIIDOCTOR := bundle exec asciidoctor
 ASCIIDOCTOR-PDF := bundle exec asciidoctor-pdf
+DOCKER := $(shell command -v podman 2> /dev/null || echo docker) 
 export PATH := bin:$(PATH)
 
 .PHONY: all
@@ -34,6 +35,11 @@ epub:	docbook
 	    echo pandoc --from docbook --to epub builds/docbook/$${file} -o builds/epub/$${file%.*}.epub ; \
 	done
 
+.PHONY: docker
+docker:
+	$(DOCKER) build --file openrecipebook.Dockerfile --squash --volume=$(PWD):/work:z --tag openrecipebook:latest
+
 .PHONY: clean
 clean:
-	rm -rf $(DESTINATION)
+	rm -rf $(DESTINATION):
+	

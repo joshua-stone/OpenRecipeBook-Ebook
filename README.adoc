@@ -4,6 +4,14 @@ One of the best things about open source is its collaborative nature and the sen
 
 == Building
 
+=== Docker
+
+....
+$ make docker
+$ podman run --volume=${PWD}:/work:z openrecipebook:latest make
+$ xdg-open builds/pdf/main_book.pdf
+....
+
 === Ubuntu
 
 ....
@@ -13,21 +21,22 @@ $ pip3 install --user -r requirements.txt
 $ bundle install
 $ git submodule update --init --recursive
 $ make
-$ xdg-open builds/recipe-book.pdf
+$ xdg-open builds/pdf/main_book.pdf
 ....
 
 === Fedora/Silverblue
 
 ....
-$ toolbox create --container openrecipebook --release f31
+$ toolbox create --container openrecipebook --release f34
 $ toolbox run --container openrecipebook sudo dnf --assumeyes install make pandoc python3-pip ruby
 $ toolbox run --container openrecipebook sudo gem install bundler
 $ toolbox run --container openrecipebook pip3 install --user -r requirements.txt
 $ toolbox run --container openrecipebook bundle install
 $ toolbox run --container openrecipebook git submodule update --init --recursive
 $ toolbox run --container openrecipebook make
-$ xdg-open builds/recipe-book.pdf
+$ xdg-open builds/pdf/main_book.pdf
 ....
+
 
 === OpenSUSE
 
@@ -38,7 +47,7 @@ $ pip3 install --user -r requirements.txt
 $ bundle install
 $ git submodule update --init --recursive
 $ make
-$ xdg-open builds/recipes-book.pdf
+$ xdg-open builds/pdf/main_book.pdf
 ....
 
 == Community
